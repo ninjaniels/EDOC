@@ -3,195 +3,206 @@ codeunit 50100 "EDOC Electronic Document Mgt."
     trigger OnRun();
     begin
     end;
-    
+
     var
-        TempPrinterSelection : Record "Printer Selection" temporary;
-        ElectronicDocumentSetup : Record "EDOC Electronic Document Setup";
-        DataTypeManegement : Codeunit "Data Type Management";
-        FileManagement : Codeunit "File Management";
-        ElectronicDocumentSetupRead : Boolean;
-        InvoiceCaption : TextConst ENU='Invoice',NOR='Faktura';
-        CreditMemoCaption : TextConst ENU='Credit Memo',NOR='Kreditnota';
-        EMailSuccessfulMsg : TextConst ENU='The document was successfully sendt on e-mail.',NOR='Bilaget ble sendt på e-post uten problemer.';
-        EMailNotSuccessfulErr : TextConst ENU='There was a problem and the document was not sendt on e-mail.',NOR='Det oppstod et problem og bilaget ble ikke sendt på e-post.';
-        DoYouWantToSendPDFTxt : TextConst ENU='Do you want to send document on PDF?',NOR='Vil du sende bilaget på PDF?';
-        CannotBeEmptyErr : TextConst ENU='%1 cannot be empty (%2).',NOR='%1 kan ikke være blank (%2).';
-        RequiredForEInvoiceTxt : TextConst ENU='This is required for an E-Invoice document which might be created from the posted document.',NOR='Dette er påkrevet for et e-fakturadokument som kan bli opprettet fra det bokførte dokumentet.';
+        TempPrinterSelection: Record "Printer Selection" temporary;
+        ElectronicDocumentSetup: Record "EDOC Electronic Document Setup";
+        DataTypeManegement: Codeunit "Data Type Management";
+        FileManagement: Codeunit "File Management";
+        ElectronicDocumentSetupRead: Boolean;
+        InvoiceCaption: TextConst ENU = 'Invoice', NOR = 'Faktura';
+        CreditMemoCaption: TextConst ENU = 'Credit Memo', NOR = 'Kreditnota';
+        EMailSuccessfulMsg: TextConst ENU = 'The document was successfully sendt on e-mail.', NOR = 'Bilaget ble sendt på e-post uten problemer.';
+        EMailNotSuccessfulErr: TextConst ENU = 'There was a problem and the document was not sendt on e-mail.', NOR = 'Det oppstod et problem og bilaget ble ikke sendt på e-post.';
+        DoYouWantToSendPDFTxt: TextConst ENU = 'Do you want to send document on PDF?', NOR = 'Vil du sende bilaget på PDF?';
+        CannotBeEmptyErr: TextConst ENU = '%1 cannot be empty (%2).', NOR = '%1 kan ikke være blank (%2).';
+        RequiredForEInvoiceTxt: TextConst ENU = 'This is required for an E-Invoice document which might be created from the posted document.', NOR = 'Dette er påkrevet for et e-fakturadokument som kan bli opprettet fra det bokførte dokumentet.';
 
-    [IntegrationEvent(false,false)]
-    local procedure OnBeforeCreatePDFDocCommonYesNo(var HeaderDoc : Variant);
-    begin
-        
-    end;
-
-    [IntegrationEvent(false,false)]
-    local procedure OnAfterCreatePDFDocCommonYesNo(var HeaderDoc : Variant);
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeCreatePDFDocCommonYesNo(var HeaderDoc: Variant);
     begin
 
     end;
 
-    [IntegrationEvent(false,false)]
-    local procedure OnBeforeCreatePDFDocument(var RecordRef : RecordRef; var ElectronicDocumentEntry : Record "EDOC Electronic Document Entry");
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterCreatePDFDocCommonYesNo(var HeaderDoc: Variant);
     begin
 
     end;
 
-    [IntegrationEvent(false,false)]
-    local procedure OnAfterCreatePDFDocument(var RecordRef : RecordRef; var ElectronicDocumentEntry : Record "EDOC Electronic Document Entry");
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeCreatePDFDocument(var RecordRef: RecordRef; var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry");
     begin
 
     end;
 
-    [IntegrationEvent(false,false)]
-    local procedure OnBeforeInitializeElectronicDocumentEntry(var ElectronicDocumentEntry : Record "EDOC Electronic Document Entry");
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterCreatePDFDocument(var RecordRef: RecordRef; var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry");
     begin
 
     end;
 
-    [IntegrationEvent(false,false)]
-    local procedure OnAfterInitializeElectronicDocumentEntry(var ElectronicDocumentEntry : Record "EDOC Electronic Document Entry");
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeInitializeElectronicDocumentEntry(var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry");
     begin
 
     end;
 
-    [IntegrationEvent(false,false)]
-    local procedure OnBeforeSendElectronicDocumentEntry(var ElectronicDocumentEntry : Record "EDOC Electronic Document Entry"; SendBCC : Boolean);
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterInitializeElectronicDocumentEntry(var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry");
     begin
 
     end;
 
-    [IntegrationEvent(false,false)]
-    local procedure OnAfterSendElectronicDocumentEntry(var ElectronicDocumentEntry : Record "EDOC Electronic Document Entry"; SendBCC : Boolean);
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeSendElectronicDocumentEntry(var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry"; SendBCC: Boolean);
     begin
 
     end;
 
-    [IntegrationEvent(false,false)]
-    local procedure OnBeforeAddToElectronicDocumentCue(var ElectronicDocumentCue : Record "EDOC Electronic Document Cue"; RecordRef : RecordRef);
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterSendElectronicDocumentEntry(var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry"; SendBCC: Boolean);
     begin
 
     end;
 
-    [IntegrationEvent(false,false)]
-    local procedure OnAfterAddToElectronicDocumentCue(var ElectronicDocumentCue : Record "EDOC Electronic Document Cue"; RecordRef : RecordRef);
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeAddToElectronicDocumentCue(var ElectronicDocumentCue: Record "EDOC Electronic Document Cue"; RecordRef: RecordRef);
     begin
 
     end;
 
-    [IntegrationEvent(false,false)]
-    local procedure OnBeforeUpdateElectronicDocumentEntry(var ElectronicDocumentEntry : Record "EDOC Electronic Document Entry"; var RecordRef : RecordRef);
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterAddToElectronicDocumentCue(var ElectronicDocumentCue: Record "EDOC Electronic Document Cue"; RecordRef: RecordRef);
     begin
 
     end;
 
-    [IntegrationEvent(false,false)]
-    local procedure OnAfterUpdateElectronicDocumentEntry(var ElectronicDocumentEntry : Record "EDOC Electronic Document Entry"; var RecordRef : RecordRef);
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeUpdateElectronicDocumentEntry(var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry"; var RecordRef: RecordRef);
     begin
 
     end;
 
-    [IntegrationEvent(false,false)]
-    local procedure OnBeforeSaveAsPDFSalesInvoiceHeader(var ElectronicDocumentEntry : Record "EDOC Electronic Document Entry"; ServerFileName : Text; var Handled : Boolean);
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterUpdateElectronicDocumentEntry(var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry"; var RecordRef: RecordRef);
     begin
 
     end;
 
-    [IntegrationEvent(false,false)]
-    local procedure OnBeforeSaveAsPDFSalesCreditMemoHeader(var ElectronicDocumentEntry : Record "EDOC Electronic Document Entry"; ServerFileName : Text; var Handled : Boolean);
-    begin
-        
-    end;
-
-    [IntegrationEvent(false,false)]
-    local procedure OnBeforeSaveAsPDFServiceInvoiceHeader(var ElectronicDocumentEntry : Record "EDOC Electronic Document Entry"; ServerFileName : Text; var Handled : Boolean);
-    begin
-        
-    end;
-
-    [IntegrationEvent(false,false)]
-    local procedure OnBeforeSaveAsPDFServiceCreditMemoHeader(var ElectronicDocumentEntry : Record "EDOC Electronic Document Entry"; ServerFileName : Text; var Handled : Boolean);
-    begin
-        
-    end;
-
-    [IntegrationEvent(false,false)]
-    local procedure OnBeforeTryElectronicDocumentSetupSalesHeader(var RecordRef : RecordRef; var Handled : Boolean);
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeSaveAsPDFSalesInvoiceHeader(var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry"; ServerFileName: Text; var Handled: Boolean);
     begin
 
     end;
 
-    [IntegrationEvent(false,false)]
-    local procedure OnBeforeTryElectronicDocumentSetupSalesInvoiceHeader(var RecordRef : RecordRef; var Handled : Boolean);
-    begin
-        
-    end;
-
-    [IntegrationEvent(false,false)]
-    local procedure OnBeforeTryElectronicDocumentSetupSalesCreditMemoHeader(var RecordRef : RecordRef; var Handled : Boolean);
-    begin
-        
-    end;
-
-    [IntegrationEvent(false,false)]
-    local procedure OnBeforeTryElectronicDocumentSetupServiceInvoiceHeader(var RecordRef : RecordRef; var Handled : Boolean);
-    begin
-        
-    end;
-
-    [IntegrationEvent(false,false)]
-    local procedure OnBeforeTryElectronicDocumentSetupServiceCreditMemoHeader(var RecordRef : RecordRef; var Handled : Boolean);
-    begin
-        
-    end;
-
-    [IntegrationEvent(false,false)]
-    local procedure OnBeforeCreateEHFDocSalesInvoiceHeader(var RecordRef : RecordRef; var Handled : Boolean);
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeSaveAsPDFSalesCreditMemoHeader(var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry"; ServerFileName: Text; var Handled: Boolean);
     begin
 
     end;
 
-    [IntegrationEvent(false,false)]
-    local procedure OnBeforeCreateEHFDocSalesCreditMemoHeader(var RecordRef : RecordRef; var Handled : Boolean);
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeSaveAsPDFServiceInvoiceHeader(var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry"; ServerFileName: Text; var Handled: Boolean);
     begin
-        
+
     end;
 
-    [IntegrationEvent(false,false)]
-    local procedure OnBeforeCreateEHFDocServiceInvoiceHeader(var RecordRef : RecordRef; var Handled : Boolean);
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeSaveAsPDFServiceCreditMemoHeader(var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry"; ServerFileName: Text; var Handled: Boolean);
     begin
-        
+
     end;
 
-    [IntegrationEvent(false,false)]
-    local procedure OnBeforeCreateEHFDocServiceCreditMemoHeader(var RecordRef : RecordRef; var Handled : Boolean);
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeTryElectronicDocumentSetupSalesHeader(var RecordRef: RecordRef; var Handled: Boolean);
     begin
-        
+
     end;
 
-    procedure CreatePDFDocumentCommonYesNo(HeaderDoc : Variant);
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeTryElectronicDocumentSetupSalesInvoiceHeader(var RecordRef: RecordRef; var Handled: Boolean);
+    begin
+
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeTryElectronicDocumentSetupSalesCreditMemoHeader(var RecordRef: RecordRef; var Handled: Boolean);
+    begin
+
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeTryElectronicDocumentSetupServiceInvoiceHeader(var RecordRef: RecordRef; var Handled: Boolean);
+    begin
+
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeTryElectronicDocumentSetupServiceCreditMemoHeader(var RecordRef: RecordRef; var Handled: Boolean);
+    begin
+
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeCreateEHFDocSalesInvoiceHeader(var RecordRef: RecordRef; var Handled: Boolean);
+    begin
+
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeCreateEHFDocSalesCreditMemoHeader(var RecordRef: RecordRef; var Handled: Boolean);
+    begin
+
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeCreateEHFDocServiceInvoiceHeader(var RecordRef: RecordRef; var Handled: Boolean);
+    begin
+
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeCreateEHFDocServiceCreditMemoHeader(var RecordRef: RecordRef; var Handled: Boolean);
+    begin
+
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeInsertElectronicDocEntryOnCreateEHFDoc(var HeaderDoc: Variant; var TempEInvoiceTransferFile: Record "E-Invoice Transfer File" temporary);
+    begin
+
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterInsertElectronicDocEntryOnCreateEHFDoc(var HeaderDoc: Variant; var TempEInvoiceTransferFile: Record "E-Invoice Transfer File" temporary);
+    begin
+    end;
+
+    procedure CreatePDFDocumentCommonYesNo(HeaderDoc: Variant);
     begin
         OnBeforeCreatePDFDocCommonYesNo(HeaderDoc);
 
         if GuiAllowed and (not Confirm(DoYouWantToSendPDFTxt)) then
-            error('');        
+            error('');
 
-        if OnCreatePDFDocCommon(HeaderDoc,false) then
+        if OnCreatePDFDocCommon(HeaderDoc, false) then
             Message(EMailSuccessfulMsg)
         else
             Message(EMailNotSuccessfulErr);
     end;
 
-    procedure OnCreatePDFDocCommon(HeaderDoc : Variant; SendBCC : Boolean) : Boolean;
+    procedure OnCreatePDFDocCommon(HeaderDoc: Variant; SendBCC: Boolean): Boolean;
     var
-        RecordRef : RecordRef;
-        ElectronicDocumentEntry : Record "EDOC Electronic Document Entry";
-        ElectronicDocumentCue : Record "EDOC Electronic Document Cue";
-        ServerFile : File;
-        InStream : InStream;
-        OutStream : OutStream;
-        ServerFileName : Text;
+        RecordRef: RecordRef;
+        ElectronicDocumentEntry: Record "EDOC Electronic Document Entry";
+        ElectronicDocumentCue: Record "EDOC Electronic Document Cue";
+        ServerFile: File;
+        InStream: InStream;
+        OutStream: OutStream;
+        ServerFileName: Text;
     begin
-        if not DataTypeManegement.GetRecordRef(HeaderDoc,RecordRef) then
+        if not DataTypeManegement.GetRecordRef(HeaderDoc, RecordRef) then
             exit;
 
         if not TryElectronicDocumentSetupCommon(HeaderDoc) then
@@ -208,19 +219,19 @@ codeunit 50100 "EDOC Electronic Document Mgt."
 
             case RecordRef.Number of
                 Database::"Sales Invoice Header":
-                    CreatePDFDocSalesInvoiceHeader(RecordRef,ElectronicDocumentEntry);
+                    CreatePDFDocSalesInvoiceHeader(RecordRef, ElectronicDocumentEntry);
                 Database::"Sales Cr.Memo Header":
-                    CreatePDFDocSalesCreditMemoHeader(RecordRef,ElectronicDocumentEntry);
+                    CreatePDFDocSalesCreditMemoHeader(RecordRef, ElectronicDocumentEntry);
                 Database::"Service Invoice Header":
-                    CreatePDFDocServiceInvoiceHeader(RecordRef,ElectronicDocumentEntry);
+                    CreatePDFDocServiceInvoiceHeader(RecordRef, ElectronicDocumentEntry);
                 Database::"Service Cr.Memo Header":
-                    CreatePDFDocServiceCreditMemoHeader(RecordRef,ElectronicDocumentEntry);
+                    CreatePDFDocServiceCreditMemoHeader(RecordRef, ElectronicDocumentEntry);
             end;
 
             SaveAsPDFCommon(ElectronicDocumentEntry);
 
             if ElectronicDocumentSetup."Send E-Mail" then
-                SendElectronicDocumentEntry(ElectronicDocumentEntry,SendBCC)
+                SendElectronicDocumentEntry(ElectronicDocumentEntry, SendBCC)
             else begin
                 Created := true;
                 "Date Created" := Today;
@@ -234,13 +245,13 @@ codeunit 50100 "EDOC Electronic Document Mgt."
                 end else begin
                     if Exists("Path to Attachment") then begin
                         ServerFileName := FileManagement.ServerTempFileName(FileManagement.GetExtension("Path to Attachment"));
-                        CopyClientFileToServerFile("Path to Attachment",ServerFileName);
+                        CopyClientFileToServerFile("Path to Attachment", ServerFileName);
                     end;
                 end;
                 ServerFile.Open(ServerFileName);
                 ServerFile.CreateInStream(InStream);
                 Attachment.CreateOutStream(OutStream);
-                CopyStream(OutStream,InStream);
+                CopyStream(OutStream, InStream);
                 ServerFile.Close;
                 if FileManagement.CanRunDotNetOnClient then begin
                     FileManagement.DeleteServerFile(ServerFileName);
@@ -250,7 +261,7 @@ codeunit 50100 "EDOC Electronic Document Mgt."
                     Erase(ServerFileName);
                     Erase("Path to Attachment");
                 end;
-                if ElectronicDocumentCue.Get("Table ID","Document No.") then
+                if ElectronicDocumentCue.Get("Table ID", "Document No.") then
                     ElectronicDocumentCue.Delete;
             end;
             Insert;
@@ -258,12 +269,12 @@ codeunit 50100 "EDOC Electronic Document Mgt."
         end;
     end;
 
-    local procedure CreatePDFDocSalesInvoiceHeader(var RecordRef : RecordRef; var ElectronicDocumentEntry : Record "EDOC Electronic Document Entry");
+    local procedure CreatePDFDocSalesInvoiceHeader(var RecordRef: RecordRef; var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry");
     var
-        SalesInvoiceHeader : Record "Sales Invoice Header";
-        Customer : Record Customer;
+        SalesInvoiceHeader: Record "Sales Invoice Header";
+        Customer: Record Customer;
     begin
-        OnBeforeCreatePDFDocument(RecordRef,ElectronicDocumentEntry);
+        OnBeforeCreatePDFDocument(RecordRef, ElectronicDocumentEntry);
 
         GetElectronicDocumentSetup;
         RecordRef.SetTable(SalesInvoiceHeader);
@@ -272,7 +283,7 @@ codeunit 50100 "EDOC Electronic Document Mgt."
             ElectronicDocumentEntry.Destination := Customer."EDOC PDF-Invoice E-Mail";
             ElectronicDocumentEntry.Invoice := true;
             ElectronicDocumentEntry."Sales Document" := true;
-            ElectronicDocumentEntry."Path to Attachment" := StrSubstNo('%1%2%3.pdf',ElectronicDocumentSetup."Sales Invoice Path",InvoiceCaption,"No.");
+            ElectronicDocumentEntry."Path to Attachment" := StrSubstNo('%1%2%3.pdf', ElectronicDocumentSetup."Sales Invoice Path", InvoiceCaption, "No.");
             ElectronicDocumentEntry."File Name" := FileManagement.GetFileName(ElectronicDocumentEntry."Path to Attachment");
             ElectronicDocumentEntry."Table ID" := RecordRef.Number;
             ElectronicDocumentEntry."Document No." := "No.";
@@ -280,15 +291,15 @@ codeunit 50100 "EDOC Electronic Document Mgt."
             ElectronicDocumentEntry."Bill-to Customer No." := "Bill-to Customer No.";
         end;
 
-        OnAfterCreatePDFDocument(RecordRef,ElectronicDocumentEntry);
+        OnAfterCreatePDFDocument(RecordRef, ElectronicDocumentEntry);
     end;
 
-    local procedure CreatePDFDocSalesCreditMemoHeader(var RecordRef : RecordRef; var ElectronicDocumentEntry : Record "EDOC Electronic Document Entry");
+    local procedure CreatePDFDocSalesCreditMemoHeader(var RecordRef: RecordRef; var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry");
     var
-        SalesCreditMemoHeader : Record "Sales Cr.Memo Header";
-        Customer : Record Customer;
+        SalesCreditMemoHeader: Record "Sales Cr.Memo Header";
+        Customer: Record Customer;
     begin
-        OnBeforeCreatePDFDocument(RecordRef,ElectronicDocumentEntry);
+        OnBeforeCreatePDFDocument(RecordRef, ElectronicDocumentEntry);
 
         GetElectronicDocumentSetup;
         RecordRef.SetTable(SalesCreditMemoHeader);
@@ -297,7 +308,7 @@ codeunit 50100 "EDOC Electronic Document Mgt."
             ElectronicDocumentEntry.Destination := Customer."EDOC PDF-Invoice E-Mail";
             ElectronicDocumentEntry."Credit Memo" := true;
             ElectronicDocumentEntry."Sales Document" := true;
-            ElectronicDocumentEntry."Path to Attachment" := StrSubstNo('%1%2%3.pdf',ElectronicDocumentSetup."Sales Credit Memo Path",CreditMemoCaption,"No.");
+            ElectronicDocumentEntry."Path to Attachment" := StrSubstNo('%1%2%3.pdf', ElectronicDocumentSetup."Sales Credit Memo Path", CreditMemoCaption, "No.");
             ElectronicDocumentEntry."File Name" := FileManagement.GetFileName(ElectronicDocumentEntry."Path to Attachment");
             ElectronicDocumentEntry."Table ID" := RecordRef.Number;
             ElectronicDocumentEntry."Document No." := "No.";
@@ -305,15 +316,15 @@ codeunit 50100 "EDOC Electronic Document Mgt."
             ElectronicDocumentEntry."Bill-to Customer No." := "Bill-to Customer No.";
         end;
 
-        OnAfterCreatePDFDocument(RecordRef,ElectronicDocumentEntry);
+        OnAfterCreatePDFDocument(RecordRef, ElectronicDocumentEntry);
     end;
 
-    local procedure CreatePDFDocServiceInvoiceHeader(var RecordRef : RecordRef; var ElectronicDocumentEntry : Record "EDOC Electronic Document Entry");
+    local procedure CreatePDFDocServiceInvoiceHeader(var RecordRef: RecordRef; var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry");
     var
-        ServiceInvoiceHeader : Record "Service Invoice Header";
-        Customer : Record Customer;
+        ServiceInvoiceHeader: Record "Service Invoice Header";
+        Customer: Record Customer;
     begin
-        OnBeforeCreatePDFDocument(RecordRef,ElectronicDocumentEntry);
+        OnBeforeCreatePDFDocument(RecordRef, ElectronicDocumentEntry);
 
         GetElectronicDocumentSetup;
         RecordRef.SetTable(ServiceInvoiceHeader);
@@ -322,7 +333,7 @@ codeunit 50100 "EDOC Electronic Document Mgt."
             ElectronicDocumentEntry.Destination := Customer."EDOC PDF-Invoice E-Mail";
             ElectronicDocumentEntry.Invoice := true;
             ElectronicDocumentEntry."Service Document" := true;
-            ElectronicDocumentEntry."Path to Attachment" := StrSubstNo('%1%2%3.pdf',ElectronicDocumentSetup."Service Invoice Path",InvoiceCaption,"No.");
+            ElectronicDocumentEntry."Path to Attachment" := StrSubstNo('%1%2%3.pdf', ElectronicDocumentSetup."Service Invoice Path", InvoiceCaption, "No.");
             ElectronicDocumentEntry."File Name" := FileManagement.GetFileName(ElectronicDocumentEntry."Path to Attachment");
             ElectronicDocumentEntry."Table ID" := RecordRef.Number;
             ElectronicDocumentEntry."Document No." := "No.";
@@ -330,15 +341,15 @@ codeunit 50100 "EDOC Electronic Document Mgt."
             ElectronicDocumentEntry."Bill-to Customer No." := "Bill-to Customer No.";
         end;
 
-        OnAfterCreatePDFDocument(RecordRef,ElectronicDocumentEntry);
+        OnAfterCreatePDFDocument(RecordRef, ElectronicDocumentEntry);
     end;
 
-    local procedure CreatePDFDocServiceCreditMemoHeader(var RecordRef : RecordRef; var ElectronicDocumentEntry : Record "EDOC Electronic Document Entry");
+    local procedure CreatePDFDocServiceCreditMemoHeader(var RecordRef: RecordRef; var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry");
     var
-        ServiceCreditMemoHeader : Record "Service Cr.Memo Header";
-        Customer : Record Customer;
+        ServiceCreditMemoHeader: Record "Service Cr.Memo Header";
+        Customer: Record Customer;
     begin
-        OnBeforeCreatePDFDocument(RecordRef,ElectronicDocumentEntry);
+        OnBeforeCreatePDFDocument(RecordRef, ElectronicDocumentEntry);
 
         GetElectronicDocumentSetup;
         RecordRef.SetTable(ServiceCreditMemoHeader);
@@ -347,7 +358,7 @@ codeunit 50100 "EDOC Electronic Document Mgt."
             ElectronicDocumentEntry.Destination := Customer."EDOC PDF-Invoice E-Mail";
             ElectronicDocumentEntry."Credit Memo" := true;
             ElectronicDocumentEntry."Service Document" := true;
-            ElectronicDocumentEntry."Path to Attachment" := StrSubstNo('%1%2%3.pdf',ElectronicDocumentSetup."Service Credit Memo Path",CreditMemoCaption,"No.");
+            ElectronicDocumentEntry."Path to Attachment" := StrSubstNo('%1%2%3.pdf', ElectronicDocumentSetup."Service Credit Memo Path", CreditMemoCaption, "No.");
             ElectronicDocumentEntry."File Name" := FileManagement.GetFileName(ElectronicDocumentEntry."Path to Attachment");
             ElectronicDocumentEntry."Table ID" := RecordRef.Number;
             ElectronicDocumentEntry."Document No." := "No.";
@@ -355,14 +366,14 @@ codeunit 50100 "EDOC Electronic Document Mgt."
             ElectronicDocumentEntry."Bill-to Customer No." := "Bill-to Customer No.";
         end;
 
-        OnAfterCreatePDFDocument(RecordRef,ElectronicDocumentEntry);
+        OnAfterCreatePDFDocument(RecordRef, ElectronicDocumentEntry);
     end;
 
-    local procedure SaveAsPDFCommon(var ElectronicDocumentEntry : Record "EDOC Electronic Document Entry");
+    local procedure SaveAsPDFCommon(var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry");
     var
-        ServerFileName : Text;
-        ClientFileName : Text;
-        FileExtension : Text[10];
+        ServerFileName: Text;
+        ClientFileName: Text;
+        FileExtension: Text[10];
     begin
         ClientFileName := ElectronicDocumentEntry."Path to Attachment";
         ElectronicDocumentEntry."Path to Attachment" := '';
@@ -371,36 +382,36 @@ codeunit 50100 "EDOC Electronic Document Mgt."
 
         case true of
             ElectronicDocumentEntry."Table ID" = Database::"Sales Invoice Header":
-                SaveAsPDFSalesInvoiceHeader(ElectronicDocumentEntry,ServerFileName);
+                SaveAsPDFSalesInvoiceHeader(ElectronicDocumentEntry, ServerFileName);
             ElectronicDocumentEntry."Table ID" = Database::"Sales Cr.Memo Header":
-                SaveAsPDFSalesCreditMemoHeader(ElectronicDocumentEntry,ServerFileName);
+                SaveAsPDFSalesCreditMemoHeader(ElectronicDocumentEntry, ServerFileName);
             ElectronicDocumentEntry."Table ID" = Database::"Service Invoice Header":
-                SaveAsPDFServiceInvoiceHeader(ElectronicDocumentEntry,ServerFileName);
+                SaveAsPDFServiceInvoiceHeader(ElectronicDocumentEntry, ServerFileName);
             ElectronicDocumentEntry."Table ID" = Database::"Service Cr.Memo Header":
-                SaveAsPDFServiceCreditMemoHeader(ElectronicDocumentEntry,ServerFileName);
+                SaveAsPDFServiceCreditMemoHeader(ElectronicDocumentEntry, ServerFileName);
         end;
 
         if FileManagement.CanRunDotNetOnClient then begin
             if FileManagement.ServerFileExists(ServerFileName) then begin
-                FileManagement.DownloadToFile(ServerFileName,ClientFileName);
+                FileManagement.DownloadToFile(ServerFileName, ClientFileName);
                 ElectronicDocumentEntry."Path to Attachment" := ClientFileName;
                 FileManagement.DeleteServerFile(ServerFileName);
             end;
         end else begin
             if Exists(ServerFileName) then begin
-                CopyClientFileToServerFile(ServerFileName,ClientFileName);
+                CopyClientFileToServerFile(ServerFileName, ClientFileName);
                 ElectronicDocumentEntry."Path to Attachment" := ClientFileName;
                 Erase(ServerFileName);
             end;
         end;
     end;
 
-    local procedure SaveAsPDFSalesInvoiceHeader(var ElectronicDocumentEntry : Record "EDOC Electronic Document Entry"; ServerFileName : Text);
+    local procedure SaveAsPDFSalesInvoiceHeader(var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry"; ServerFileName: Text);
     var
-        SalesInvoiceHeader : Record "Sales Invoice Header";
-        Handled : Boolean;
+        SalesInvoiceHeader: Record "Sales Invoice Header";
+        Handled: Boolean;
     begin
-        OnBeforeSaveAsPDFSalesInvoiceHeader(ElectronicDocumentEntry,ServerFileName,Handled);
+        OnBeforeSaveAsPDFSalesInvoiceHeader(ElectronicDocumentEntry, ServerFileName, Handled);
         if Handled then
             exit;
 
@@ -409,16 +420,16 @@ codeunit 50100 "EDOC Electronic Document Mgt."
             Get(ElectronicDocumentEntry."Document No.");
             SetRecFilter;
             ElectronicDocumentSetup.TestField("Sales Inv. Report ID");
-            Report.SaveAsPdf(ElectronicDocumentSetup."Sales Inv. Report ID",ServerFileName,SalesInvoiceHeader);
+            Report.SaveAsPdf(ElectronicDocumentSetup."Sales Inv. Report ID", ServerFileName, SalesInvoiceHeader);
         end;
     end;
 
-    local procedure SaveAsPDFSalesCreditMemoHeader(var ElectronicDocumentEntry : Record "EDOC Electronic Document Entry"; ServerFileName : Text);
+    local procedure SaveAsPDFSalesCreditMemoHeader(var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry"; ServerFileName: Text);
     var
-        SalesCreditMemoHeader : Record "Sales Cr.Memo Header";
-        Handled : Boolean;
+        SalesCreditMemoHeader: Record "Sales Cr.Memo Header";
+        Handled: Boolean;
     begin
-        OnBeforeSaveAsPDFSalesCreditMemoHeader(ElectronicDocumentEntry,ServerFileName,Handled);
+        OnBeforeSaveAsPDFSalesCreditMemoHeader(ElectronicDocumentEntry, ServerFileName, Handled);
         if Handled then
             exit;
 
@@ -427,16 +438,16 @@ codeunit 50100 "EDOC Electronic Document Mgt."
             Get(ElectronicDocumentEntry."Document No.");
             SetRecFilter;
             ElectronicDocumentSetup.TestField("Sales Credit Memo Report ID");
-            Report.SaveAsPdf(ElectronicDocumentSetup."Sales Credit Memo Report ID",ServerFileName,SalesCreditMemoHeader);
+            Report.SaveAsPdf(ElectronicDocumentSetup."Sales Credit Memo Report ID", ServerFileName, SalesCreditMemoHeader);
         end;
     end;
 
-    local procedure SaveAsPDFServiceInvoiceHeader(var ElectronicDocumentEntry : Record "EDOC Electronic Document Entry"; ServerFileName : Text);
+    local procedure SaveAsPDFServiceInvoiceHeader(var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry"; ServerFileName: Text);
     var
-        ServiceInvoiceHeader : Record "Service Invoice Header";
-        Handled : Boolean;
+        ServiceInvoiceHeader: Record "Service Invoice Header";
+        Handled: Boolean;
     begin
-        OnBeforeSaveAsPDFServiceInvoiceHeader(ElectronicDocumentEntry,ServerFileName,Handled);
+        OnBeforeSaveAsPDFServiceInvoiceHeader(ElectronicDocumentEntry, ServerFileName, Handled);
         if Handled then
             exit;
 
@@ -445,16 +456,16 @@ codeunit 50100 "EDOC Electronic Document Mgt."
             Get(ElectronicDocumentEntry."Document No.");
             SetRecFilter;
             ElectronicDocumentSetup.TestField("Service Invoice Report ID");
-            Report.SaveAsPdf(ElectronicDocumentSetup."Service Invoice Report ID",ServerFileName,ServiceInvoiceHeader);
+            Report.SaveAsPdf(ElectronicDocumentSetup."Service Invoice Report ID", ServerFileName, ServiceInvoiceHeader);
         end;
     end;
 
-    local procedure SaveAsPDFServiceCreditMemoHeader(var ElectronicDocumentEntry : Record "EDOC Electronic Document Entry"; ServerFileName : Text);
+    local procedure SaveAsPDFServiceCreditMemoHeader(var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry"; ServerFileName: Text);
     var
-        ServiceCreditMemoHeader : Record "Service Cr.Memo Header";
-        Handled : Boolean;
+        ServiceCreditMemoHeader: Record "Service Cr.Memo Header";
+        Handled: Boolean;
     begin
-        OnBeforeSaveAsPDFServiceCreditMemoHeader(ElectronicDocumentEntry,ServerFileName,Handled);
+        OnBeforeSaveAsPDFServiceCreditMemoHeader(ElectronicDocumentEntry, ServerFileName, Handled);
         if Handled then
             exit;
 
@@ -463,11 +474,11 @@ codeunit 50100 "EDOC Electronic Document Mgt."
             Get(ElectronicDocumentEntry."Document No.");
             SetRecFilter;
             ElectronicDocumentSetup.TestField("Service Credit Memo Report ID");
-            Report.SaveAsPdf(ElectronicDocumentSetup."Service Credit Memo Report ID",ServerFileName,ServiceCreditMemoHeader);
+            Report.SaveAsPdf(ElectronicDocumentSetup."Service Credit Memo Report ID", ServerFileName, ServiceCreditMemoHeader);
         end;
     end;
 
-    local procedure InitializeElectronicDocumentEntry(var ElectronicDocumentEntry : Record "EDOC Electronic Document Entry");
+    local procedure InitializeElectronicDocumentEntry(var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry");
     begin
         OnBeforeInitializeElectronicDocumentEntry(ElectronicDocumentEntry);
 
@@ -480,15 +491,15 @@ codeunit 50100 "EDOC Electronic Document Mgt."
         OnAfterInitializeElectronicDocumentEntry(ElectronicDocumentEntry);
     end;
 
-    local procedure SendElectronicDocumentEntry(var ElectronicDocumentEntry : Record "EDOC Electronic Document Entry"; SendBCC : Boolean);
+    local procedure SendElectronicDocumentEntry(var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry"; SendBCC: Boolean);
     var
-        SMTP : Codeunit "SMTP Mail";
-        SubjectText : Text;
-        BodyText : Text;
-        ServerFileName : Text;
-        BodyBigText : BigText;
+        SMTP: Codeunit "SMTP Mail";
+        SubjectText: Text;
+        BodyText: Text;
+        ServerFileName: Text;
+        BodyBigText: BigText;
     begin
-        OnBeforeSendElectronicDocumentEntry(ElectronicDocumentEntry,SendBCC);
+        OnBeforeSendElectronicDocumentEntry(ElectronicDocumentEntry, SendBCC);
 
         with ElectronicDocumentEntry do begin
             if not Created then begin
@@ -497,11 +508,11 @@ codeunit 50100 "EDOC Electronic Document Mgt."
                     if not FileManagement.ClientFileExists("Path to Attachment") then
                         exit;
                     ServerFileName := FileManagement.UploadFileSilent("Path to Attachment");
-                    CopyClientFileToServerFile("Path to Attachment",ServerFileName);
+                    CopyClientFileToServerFile("Path to Attachment", ServerFileName);
                 end;
                 GetElectronicDocumentSetup;
                 ElectronicDocumentSetup.ReadFromEMailBody(BodyBigText);
-                BodyBigText.GetSubText(BodyText,1);
+                BodyBigText.GetSubText(BodyText, 1);
                 if Invoice then
                     SubjectText := InvoiceCaption
                 else
@@ -516,8 +527,8 @@ codeunit 50100 "EDOC Electronic Document Mgt."
                             "Sell-to Customer Name",
                             SubjectText,
                             "Document No."),
-                    BodyText,false);
-                SMTP.AddAttachment(ServerFileName,"File Name");
+                    BodyText, false);
+                SMTP.AddAttachment(ServerFileName, "File Name");
                 if SMTP.TrySend then begin
                     Created := true;
                     "Date Created" := Today;
@@ -534,9 +545,9 @@ codeunit 50100 "EDOC Electronic Document Mgt."
                                 "Sell-to Customer Name",
                                 SubjectText,
                                 "Document No."),
-                        BodyText,false);
-                    SMTP.AddAttachment(ServerFileName,"File Name");
-                    if SMTP.TrySend then ;
+                        BodyText, false);
+                    SMTP.AddAttachment(ServerFileName, "File Name");
+                    if SMTP.TrySend then;
                 end;
                 if FileManagement.CanRunDotNetOnClient then
                     FileManagement.DeleteServerFile(ServerFileName)
@@ -545,7 +556,7 @@ codeunit 50100 "EDOC Electronic Document Mgt."
             end;
         end;
 
-        OnAfterSendElectronicDocumentEntry(ElectronicDocumentEntry,SendBCC);
+        OnAfterSendElectronicDocumentEntry(ElectronicDocumentEntry, SendBCC);
     end;
 
     local procedure GetElectronicDocumentSetup();
@@ -553,23 +564,23 @@ codeunit 50100 "EDOC Electronic Document Mgt."
         if not ElectronicDocumentSetupRead then begin
             ElectronicDocumentSetup.Get;
             ElectronicDocumentSetupRead := true;
-        end;        
+        end;
     end;
 
     [TryFunction]
-    procedure TryElectronicDocumentSetupCommon(var HeaderDoc : Variant);
+    procedure TryElectronicDocumentSetupCommon(var HeaderDoc: Variant);
     var
-        CompanyInformation : Record "Company Information";
-        UserSetup : Record "User Setup";
-        DataTypeManagement : Codeunit "Data Type Management";
-        RecordRef : RecordRef;
+        CompanyInformation: Record "Company Information";
+        UserSetup: Record "User Setup";
+        DataTypeManagement: Codeunit "Data Type Management";
+        RecordRef: RecordRef;
     begin
         if not HeaderDoc.IsRecord then
             exit;
 
-        DataTypeManagement.GetRecordRef(HeaderDoc,RecordRef);
+        DataTypeManagement.GetRecordRef(HeaderDoc, RecordRef);
         GetElectronicDocumentSetup;
-        ElectronicDocumentSetup.TestField(Active,true);
+        ElectronicDocumentSetup.TestField(Active, true);
         ElectronicDocumentSetup.TestField("SMTP Name");
         ElectronicDocumentSetup.TestField("SMTP E-Mail");
 
@@ -599,19 +610,19 @@ codeunit 50100 "EDOC Electronic Document Mgt."
     end;
 
     [TryFunction]
-    local procedure TryElectronicDocumentSetupSalesHeader(var RecordRef : RecordRef);
+    local procedure TryElectronicDocumentSetupSalesHeader(var RecordRef: RecordRef);
     var
-        SalesHeader : Record "Sales Header";
-        Handled : Boolean;
+        SalesHeader: Record "Sales Header";
+        Handled: Boolean;
     begin
-        OnBeforeTryElectronicDocumentSetupSalesHeader(RecordRef,Handled);
+        OnBeforeTryElectronicDocumentSetupSalesHeader(RecordRef, Handled);
         if Handled then
             exit;
 
         GetElectronicDocumentSetup;
         RecordRef.SetTable(SalesHeader);
         with SalesHeader do begin
-            if "Document Type" in ["Document Type"::Order,"Document Type"::Invoice] then begin
+            if "Document Type" in ["Document Type"::Order, "Document Type"::Invoice] then begin
                 ElectronicDocumentSetup.TestField("Sales Invoice Path");
                 ElectronicDocumentSetup.TestField("Sales Inv. Report ID");
             end;
@@ -624,11 +635,11 @@ codeunit 50100 "EDOC Electronic Document Mgt."
     end;
 
     [TryFunction]
-    local procedure TryElectronicDocumentSetupSalesInvoiceHeader(var RecordRef : RecordRef);
+    local procedure TryElectronicDocumentSetupSalesInvoiceHeader(var RecordRef: RecordRef);
     var
-        Handled : Boolean;
+        Handled: Boolean;
     begin
-        OnBeforeTryElectronicDocumentSetupSalesInvoiceHeader(RecordRef,Handled);
+        OnBeforeTryElectronicDocumentSetupSalesInvoiceHeader(RecordRef, Handled);
         if Handled then
             exit;
 
@@ -638,11 +649,11 @@ codeunit 50100 "EDOC Electronic Document Mgt."
     end;
 
     [TryFunction]
-    local procedure TryElectronicDocumentSetupSalesCreditMemoHeader(var RecordRef : RecordRef);
+    local procedure TryElectronicDocumentSetupSalesCreditMemoHeader(var RecordRef: RecordRef);
     var
-        Handled : Boolean;
+        Handled: Boolean;
     begin
-        OnBeforeTryElectronicDocumentSetupSalesCreditMemoHeader(RecordRef,Handled);
+        OnBeforeTryElectronicDocumentSetupSalesCreditMemoHeader(RecordRef, Handled);
         if Handled then
             exit;
 
@@ -652,11 +663,11 @@ codeunit 50100 "EDOC Electronic Document Mgt."
     end;
 
     [TryFunction]
-    local procedure TryElectronicDocumentSetupServiceInvoiceHeader(var RecordRef : RecordRef);
+    local procedure TryElectronicDocumentSetupServiceInvoiceHeader(var RecordRef: RecordRef);
     var
-        Handled : Boolean;
+        Handled: Boolean;
     begin
-        OnBeforeTryElectronicDocumentSetupServiceInvoiceHeader(RecordRef,Handled);
+        OnBeforeTryElectronicDocumentSetupServiceInvoiceHeader(RecordRef, Handled);
         if Handled then
             exit;
 
@@ -666,11 +677,11 @@ codeunit 50100 "EDOC Electronic Document Mgt."
     end;
 
     [TryFunction]
-    local procedure TryElectronicDocumentSetupServiceCreditMemoHeader(var RecordRef : RecordRef);
+    local procedure TryElectronicDocumentSetupServiceCreditMemoHeader(var RecordRef: RecordRef);
     var
-        Handled : Boolean;
+        Handled: Boolean;
     begin
-        OnBeforeTryElectronicDocumentSetupServiceCreditMemoHeader(RecordRef,Handled);
+        OnBeforeTryElectronicDocumentSetupServiceCreditMemoHeader(RecordRef, Handled);
         if Handled then
             exit;
 
@@ -679,18 +690,18 @@ codeunit 50100 "EDOC Electronic Document Mgt."
         ElectronicDocumentSetup.TestField("Service Credit Memo Report ID");
     end;
 
-    local procedure AddToElectronicDocumentCueSalesInvoiceHeader(var ElectronicDocumentCue : Record "EDOC Electronic Document Cue"; var RecordRef : RecordRef) : Boolean;
+    local procedure AddToElectronicDocumentCueSalesInvoiceHeader(var ElectronicDocumentCue: Record "EDOC Electronic Document Cue"; var RecordRef: RecordRef): Boolean;
     var
-        SalesInvoiceHeader : Record "Sales Invoice Header";
+        SalesInvoiceHeader: Record "Sales Invoice Header";
     begin
-        OnBeforeAddToElectronicDocumentCue(ElectronicDocumentCue,RecordRef);
+        OnBeforeAddToElectronicDocumentCue(ElectronicDocumentCue, RecordRef);
 
         GetElectronicDocumentSetup;
         RecordRef.SetTable(SalesInvoiceHeader);
         with SalesInvoiceHeader do begin
             if (not "EDOC PDF-Invoice") and (not "E-Invoice") then
                 exit;
-            if  "EDOC PDF-Invoice" and (not ElectronicDocumentSetup."Include PDF in Document Cue") then
+            if "EDOC PDF-Invoice" and (not ElectronicDocumentSetup."Include PDF in Document Cue") then
                 exit;
             if "E-Invoice" and (not ElectronicDocumentSetup."Include EHF in Document Cue") then
                 exit;
@@ -704,21 +715,21 @@ codeunit 50100 "EDOC Electronic Document Mgt."
             ElectronicDocumentCue."Bill-to Customer No." := "Bill-to Customer No.";
         end;
 
-        OnAfterAddToElectronicDocumentCue(ElectronicDocumentCue,RecordRef);
+        OnAfterAddToElectronicDocumentCue(ElectronicDocumentCue, RecordRef);
 
         exit(true);
     end;
 
-    local procedure AddToElectronicDocumentCueSalesCreditMemoHeader(var ElectronicDocumentCue : Record "EDOC Electronic Document Cue"; var RecordRef : RecordRef) : Boolean;
+    local procedure AddToElectronicDocumentCueSalesCreditMemoHeader(var ElectronicDocumentCue: Record "EDOC Electronic Document Cue"; var RecordRef: RecordRef): Boolean;
     var
-        SalesCreditMemoHeader : Record "Sales Cr.Memo Header";
+        SalesCreditMemoHeader: Record "Sales Cr.Memo Header";
     begin
-        OnBeforeAddToElectronicDocumentCue(ElectronicDocumentCue,RecordRef);
+        OnBeforeAddToElectronicDocumentCue(ElectronicDocumentCue, RecordRef);
 
         GetElectronicDocumentSetup;
         RecordRef.SetTable(SalesCreditMemoHeader);
-        with SalesCreditMemoHeader do begin 
-            if not ("EDOC PDF-Invoice") and (not E-"E-Invoice") then
+        with SalesCreditMemoHeader do begin
+            if not ("EDOC PDF-Invoice") and (not E - "E-Invoice") then
                 exit;
             if "EDOC PDF-Invoice" and (not ElectronicDocumentSetup."Include PDF in Document Cue") then
                 exit;
@@ -734,16 +745,16 @@ codeunit 50100 "EDOC Electronic Document Mgt."
             ElectronicDocumentCue."Bill-to Customer No." := "Bill-to Customer No.";
         end;
 
-        OnAfterAddToElectronicDocumentCue(ElectronicDocumentCue,RecordRef);
+        OnAfterAddToElectronicDocumentCue(ElectronicDocumentCue, RecordRef);
 
         exit(true);
     end;
 
-    local procedure AddToElectronicDocumentCueServiceInvoiceHeader(var ElectronicDocumentCue : Record "EDOC Electronic Document Cue"; var RecordRef : RecordRef) : Boolean;
+    local procedure AddToElectronicDocumentCueServiceInvoiceHeader(var ElectronicDocumentCue: Record "EDOC Electronic Document Cue"; var RecordRef: RecordRef): Boolean;
     var
-        ServiceInvoiceHeader : Record "Service Invoice Header";
+        ServiceInvoiceHeader: Record "Service Invoice Header";
     begin
-        OnBeforeAddToElectronicDocumentCue(ElectronicDocumentCue,RecordRef);
+        OnBeforeAddToElectronicDocumentCue(ElectronicDocumentCue, RecordRef);
 
         GetElectronicDocumentSetup;
         RecordRef.SetTable(ServiceInvoiceHeader);
@@ -764,16 +775,16 @@ codeunit 50100 "EDOC Electronic Document Mgt."
             ElectronicDocumentCue."Bill-to Customer No." := "Bill-to Customer No.";
         end;
 
-        OnAfterAddToElectronicDocumentCue(ElectronicDocumentCue,RecordRef);
+        OnAfterAddToElectronicDocumentCue(ElectronicDocumentCue, RecordRef);
 
         exit(true);
     end;
 
-    local procedure AddToElectronicDocumentCueServiceCreditMemoHeader(var ElectronicDocumentCue : Record "EDOC Electronic Document Cue"; var RecordRef : RecordRef) : Boolean;
+    local procedure AddToElectronicDocumentCueServiceCreditMemoHeader(var ElectronicDocumentCue: Record "EDOC Electronic Document Cue"; var RecordRef: RecordRef): Boolean;
     var
-        ServiceCreditMemoHeader : Record "Service Cr.Memo Header";
+        ServiceCreditMemoHeader: Record "Service Cr.Memo Header";
     begin
-        OnBeforeAddToElectronicDocumentCue(ElectronicDocumentCue,RecordRef);
+        OnBeforeAddToElectronicDocumentCue(ElectronicDocumentCue, RecordRef);
 
         GetElectronicDocumentSetup;
         RecordRef.SetTable(ServiceCreditMemoHeader);
@@ -794,25 +805,25 @@ codeunit 50100 "EDOC Electronic Document Mgt."
             ElectronicDocumentCue."Bill-to Customer No." := "Bill-to Customer No.";
         end;
 
-        OnAfterAddToElectronicDocumentCue(ElectronicDocumentCue,RecordRef);        
+        OnAfterAddToElectronicDocumentCue(ElectronicDocumentCue, RecordRef);
 
         exit(true);
     end;
 
-    procedure OnCreateEHFDocCommon(var HeaderDoc : Variant) : Boolean;
+    procedure OnCreateEHFDocCommon(var HeaderDoc: Variant): Boolean;
     var
-        CompanyInformation : Record "Company Information";
-        UserSetup : Record "User Setup";
-        RecordRef : RecordRef;
+        CompanyInformation: Record "Company Information";
+        UserSetup: Record "User Setup";
+        RecordRef: RecordRef;
     begin
         if HeaderDoc.IsRecord then begin
             GetElectronicDocumentSetup;
-            ElectronicDocumentSetup.TestField(Active,true);
+            ElectronicDocumentSetup.TestField(Active, true);
             CompanyInformation.Get;
-            CompanyInformation.TestField("EDOC Allow Use of PDF-Invoice",true);
+            CompanyInformation.TestField("EDOC Allow Use of PDF-Invoice", true);
             UserSetup.Get(UserId);
-            UserSetup.TestField("EDOC Allow Use of PDF-Invoice",true);
-            DataTypeManegement.GetRecordRef(HeaderDoc,RecordRef);
+            UserSetup.TestField("EDOC Allow Use of PDF-Invoice", true);
+            DataTypeManegement.GetRecordRef(HeaderDoc, RecordRef);
 
             if not TrySomethingToExport(RecordRef) then begin
                 DeleteElectronicDocumentCue(RecordRef);
@@ -832,70 +843,70 @@ codeunit 50100 "EDOC Electronic Document Mgt."
         end;
     end;
 
-    local procedure CreateEHFDocSalesInvoiceHeader(var RecordRef : RecordRef) : Boolean;
+    local procedure CreateEHFDocSalesInvoiceHeader(var RecordRef: RecordRef): Boolean;
     var
-        SalesInvoiceHeader : Record "Sales Invoice Header";
-        Handled : Boolean;
+        SalesInvoiceHeader: Record "Sales Invoice Header";
+        Handled: Boolean;
     begin
-        OnBeforeCreateEHFDocSalesInvoiceHeader(RecordRef,Handled);
+        OnBeforeCreateEHFDocSalesInvoiceHeader(RecordRef, Handled);
         if Handled then
             exit(true);
 
         RecordRef.SetTable(SalesInvoiceHeader);
         SalesInvoiceHeader.SetRecFilter;
-        Report.RunModal(Report::"Create Electronic Invoices",false,false,SalesInvoiceHeader);
+        Report.RunModal(Report::"Create Electronic Invoices", false, false, SalesInvoiceHeader);
         exit(true);
     end;
 
-    local procedure CreateEHFDocSalesCreditMemoHeader(var RecordRef : RecordRef) : Boolean;
+    local procedure CreateEHFDocSalesCreditMemoHeader(var RecordRef: RecordRef): Boolean;
     var
-        SalesCreditMemoHeader : Record "Sales Cr.Memo Header";
-        Handled : Boolean;
+        SalesCreditMemoHeader: Record "Sales Cr.Memo Header";
+        Handled: Boolean;
     begin
-        OnBeforeCreateEHFDocSalesCreditMemoHeader(RecordRef,Handled);
+        OnBeforeCreateEHFDocSalesCreditMemoHeader(RecordRef, Handled);
         if Handled then
             exit(true);
 
         RecordRef.SetTable(SalesCreditMemoHeader);
         SalesCreditMemoHeader.SetRecFilter;
-        Report.RunModal(Report::"Create Electronic Credit Memos",false,false,SalesCreditMemoHeader);
+        Report.RunModal(Report::"Create Electronic Credit Memos", false, false, SalesCreditMemoHeader);
         exit(true);
     end;
 
-    local procedure CreateEHFDocServiceInvoiceHeader(var RecordRef : RecordRef) : Boolean;
+    local procedure CreateEHFDocServiceInvoiceHeader(var RecordRef: RecordRef): Boolean;
     var
-        ServiceInvoiceHeader : Record "Service Invoice Header";
-        Handled : Boolean;
+        ServiceInvoiceHeader: Record "Service Invoice Header";
+        Handled: Boolean;
     begin
-        OnBeforeCreateEHFDocServiceInvoiceHeader(RecordRef,Handled);
+        OnBeforeCreateEHFDocServiceInvoiceHeader(RecordRef, Handled);
         if Handled then
             exit(true);
 
         RecordRef.SetTable(ServiceInvoiceHeader);
         ServiceInvoiceHeader.SetRecFilter;
-        Report.RunModal(Report::"Create Elec. Service Invoices",false,false,ServiceInvoiceHeader);
+        Report.RunModal(Report::"Create Elec. Service Invoices", false, false, ServiceInvoiceHeader);
         exit(true);
     end;
 
-    local procedure CreateEHFDocServiceCreditMemoHeader(var RecordRef : RecordRef) : Boolean;
+    local procedure CreateEHFDocServiceCreditMemoHeader(var RecordRef: RecordRef): Boolean;
     var
-        ServiceCreditMemoHeader : Record "Service Cr.Memo Header";
-        Handled : Boolean;
+        ServiceCreditMemoHeader: Record "Service Cr.Memo Header";
+        Handled: Boolean;
     begin
-        OnBeforeCreateEHFDocServiceCreditMemoHeader(RecordRef,Handled);
+        OnBeforeCreateEHFDocServiceCreditMemoHeader(RecordRef, Handled);
         if Handled then
             exit(true);
 
         RecordRef.SetTable(ServiceCreditMemoHeader);
         ServiceCreditMemoHeader.SetRecFilter;
-        Report.RunModal(Report::"Create Elec. Service Cr. Memos",false,false,ServiceCreditMemoHeader);
+        Report.RunModal(Report::"Create Elec. Service Cr. Memos", false, false, ServiceCreditMemoHeader);
         exit(true);
     end;
 
-    procedure CommonSetPDFInvoiceFromCustomerNo(var RecordRef : RecordRef; FieldNumber : Integer; CustomerNo : Code[20]);
+    procedure CommonSetPDFInvoiceFromCustomerNo(var RecordRef: RecordRef; FieldNumber: Integer; CustomerNo: Code[20]);
     var
-        Customer : Record Customer;
-        FieldReference : FieldRef;
+        Customer: Record Customer;
+        FieldReference: FieldRef;
     begin
         if Customer.Get(CustomerNo) then begin
             FieldReference := RecordRef.Field(FieldNumber);
@@ -903,23 +914,180 @@ codeunit 50100 "EDOC Electronic Document Mgt."
         end;
     end;
 
-    local procedure UpdateElectronicDocEntryFromSalesInvoiceHeader(var ElectronicDocumentEntry : Record "EDOC Electronic Document Entry"; var RecordRef : RecordRef);
+    local procedure UpdateElectronicDocEntryFromSalesInvoiceHeader(var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry"; var RecordRef: RecordRef);
     var
-        SalesInvoiceHeader : Record "Sales Invoice Header";
+        SalesInvoiceHeader: Record "Sales Invoice Header";
     begin
-        OnBeforeUpdateElectronicDocumentEntry(ElectronicDocumentEntry,RecordRef);
+        OnBeforeUpdateElectronicDocumentEntry(ElectronicDocumentEntry, RecordRef);
 
         RecordRef.SetTable(SalesInvoiceHeader);
         with ElectronicDocumentEntry do begin
             "Table ID" := RecordRef.Number;
             "Document No." := SalesInvoiceHeader."No.";
-            Destination := StrSubstNo('%1 : %2',FieldCaption("E-Invoice"),SalesInvoiceHeader."Bill-to Name");
+            Destination := StrSubstNo('%1 : %2', FieldCaption("E-Invoice"), SalesInvoiceHeader."Bill-to Name");
             Invoice := true;
             "Sales Document" := true;
             "Sell-to Customer No." := SalesInvoiceHeader."Sell-to Customer No.";
             "Bill-to Customer No." := SalesInvoiceHeader."Bill-to Customer No.";
         end;
 
-        OnAfterUpdateElectronicDocumentEntry(ElectronicDocumentEntry,RecordRef);
+        OnAfterUpdateElectronicDocumentEntry(ElectronicDocumentEntry, RecordRef);
+    end;
+
+    local procedure UpdateElectronicDocEntryFromSalesCreditMemoHeader(var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry"; var RecordRef: RecordRef);
+    var
+        SalesCreditMemoHeader: Record "Sales Cr.Memo Header";
+    begin
+        OnBeforeUpdateElectronicDocumentEntry(ElectronicDocumentEntry, RecordRef);
+
+        RecordRef.SetTable(SalesCreditMemoHeader);
+        with ElectronicDocumentEntry do begin
+            "Table ID" := RecordRef.Number;
+            "Document No." := SalesCreditMemoHeader."No.";
+            Destination := StrSubstNo('%1 : %2', FieldCaption("E-Invoice"), SalesCreditMemoHeader."Bill-to Name");
+            "Credit Memo" := true;
+            "Sales Document" := true;
+            "Sell-to Customer No." := SalesCreditMemoHeader."Sell-to Customer No.";
+            "Bill-to Customer No." := SalesCreditMemoHeader."Bill-to Customer No.";
+        end;
+
+        OnAfterUpdateElectronicDocumentEntry(ElectronicDocumentEntry, RecordRef);
+    end;
+
+    local procedure UpdateElectronicDocEntryFromServiceInvoiceHeader(var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry"; var RecordRef);
+    var
+        ServiceInvoiceHeader: Record "Service Invoice Header";
+    begin
+        OnBeforeUpdateElectronicDocumentEntry(ElectronicDocumentEntry, RecordRef);
+
+        RecordRef.SetTable(ServiceInvoiceHeader);
+        with ElectronicDocumentEntry do begin
+            "Table ID" := RecordRef.Number;
+            "Document No." := ServiceInvoiceHeader."No.";
+            Destination := StrSubstNo('%1 : %2', FieldCaption("E-Invoice"), ServiceInvoiceHeader."Bill-to Name");
+            "Credit Memo" := true;
+            "Sales Document" := true;
+            "Sell-to Customer No." := ServiceInvoiceHeader."Customer No.";
+            "Bill-to Customer No." := ServiceInvoiceHeader."Bill-to Customer No.";
+        end;
+
+        OnAfterUpdateElectronicDocumentEntry(ElectronicDocumentEntry, RecordRef);
+    end;
+
+    local procedure UpdateElectronicDocEntryFromServiceCreditMemoHeader(var ElectronicDocumentEntry: Record "EDOC Electronic Document Entry"; var RecordRef: RecordRef);
+    var
+        ServiceCreditMemoHeader: Record "Service Cr.Memo Header";
+    begin
+        OnBeforeUpdateElectronicDocumentEntry(ElectronicDocumentEntry, RecordRef);
+
+        RecordRef.SetTable(ServiceCreditMemoHeader);
+        with ElectronicDocumentEntry do begin
+            "Table ID" := RecordRef.Number;
+            "Document No." := ServiceCreditMemoHeader."No.";
+            Destination := StrSubstNo('%1 : %2', FieldCaption("E-Invoice"), ServiceCreditMemoHeader."Bill-to Name");
+            "Credit Memo" := true;
+            "Sales Document" := true;
+            "Sell-to Customer No." := ServiceCreditMemoHeader."Customer No.";
+            "Bill-to Customer No." := ServiceCreditMemoHeader."Bill-to Customer No.";
+        end;
+
+        OnAfterUpdateElectronicDocumentEntry(ElectronicDocumentEntry, RecordRef);
+    end;
+
+    procedure InsertElectronicDocEntryOnCreateEHFDocumentCommon(var HeaderDoc: Variant; var TempEInvoiceTransferFile: Record "E-Invoice Transfer File" temporary);
+    var
+        ElectronicDocumentEntry: Record "EDOC Electronic Document Entry";
+        ElectronicDocumentCue: Record "EDOC Electronic Document Cue";
+        RecordRef: RecordRef;
+        FieldRef: FieldRef;
+    begin
+        OnBeforeInsertElectronicDocEntryOnCreateEHFDoc(HeaderDoc, TempEInvoiceTransferFile);
+
+        if TempEInvoiceTransferFile."Server Temp File Name" <> '' then begin
+            DataTypeManegement.GetRecordRef(HeaderDoc, RecordRef);
+            FieldRef := RecordRef.FieldIndex(1);
+            InitializeElectronicDocumentEntry(ElectronicDocumentEntry);
+            ElectronicDocumentEntry.Created := true;
+            ElectronicDocumentEntry."Path to Attachment" :=
+                CopyStr(
+                    StrSubstNo('%1\%2',
+                        TempEInvoiceTransferFile."Local Path",
+                        TempEInvoiceTransferFile."Local File Name"),
+                    1, MaxStrLen(ElectronicDocumentEntry."Path to Attachment"));
+            ElectronicDocumentEntry."File Name" := TempEInvoiceTransferFile."Local File Name";
+            ElectronicDocumentEntry."Date Created" := Today;
+            ElectronicDocumentEntry."Time Created" := Time;
+            ElectronicDocumentEntry."E-Invoice" := true;
+            case RecordRef.Number of
+                Database::"Sales Invoice Header":
+                    UpdateElectronicDocEntryFromSalesInvoiceHeader(ElectronicDocumentEntry, RecordRef);
+                Database::"Sales Cr.Memo Header":
+                    UpdateElectronicDocEntryFromSalesCreditMemoHeader(ElectronicDocumentEntry, RecordRef);
+                Database::"Service Invoice Header":
+                    UpdateElectronicDocEntryFromServiceInvoiceHeader(ElectronicDocumentEntry, RecordRef);
+                Database::"Service Cr.Memo Header":
+                    UpdateElectronicDocEntryFromServiceCreditMemoHeader(ElectronicDocumentEntry, RecordRef);
+            end;
+            ElectronicDocumentEntry.Insert;
+            if ElectronicDocumentCue.Get(RecordRef.Number, Format(FieldRef.Value)) then
+                ElectronicDocumentCue.Delete;
+            TempEInvoiceTransferFile."EDOC Electronic Inv. Entry No." := ElectronicDocumentEntry."Entry No.";
+        end;
+
+        OnAfterInsertElectronicDocEntryOnCreateEHFDoc(HeaderDoc, TempEInvoiceTransferFile);
+    end;
+
+    [TryFunction]
+    local procedure TrySomethingToExport(var RecordRef: RecordRef)
+    var
+        SalesInvoiceLine: Record "Sales Invoice Line";
+        SalesCreditMemoLine: Record "Sales Cr.Memo Line";
+        ServiceInvoiceLine: Record "Service Invoice Line";
+        ServiceCreditMemoLine: Record "Service Cr.Memo Line";
+        FieldRef: FieldRef;
+    begin
+        FieldRef := RecordRef.FieldIndex(1);
+        case RecordRef.Number of
+            Database::"Sales Invoice Header":
+                begin
+                    SalesInvoiceLine.SetCurrentKey(Type, "No.");
+                    SalesInvoiceLine.SetFilter("Document No.", FORMAT(FieldRef.Value));
+                    SalesInvoiceLine.SetFilter(Type, '>%1', 0);
+                    SalesInvoiceLine.SetFilter("No.", '<>%1', '');
+                    SalesInvoiceLine.FindFirst;
+                end;
+            Database::"Sales Cr.Memo Header":
+                begin
+                    SalesCreditMemoLine.SetCurrentKey(Type, "No.");
+                    SalesCreditMemoLine.SetFilter("Document No.", FORMAT(FieldRef.Value));
+                    SalesCreditMemoLine.SetFilter(Type, '>%1', 0);
+                    SalesCreditMemoLine.SetFilter("No.", '<>%1', '');
+                    SalesCreditMemoLine.FindFirst;
+                end;
+            Database::"Service Invoice Header":
+                begin
+                    ServiceInvoiceLine.SetCurrentKey(Type, "No.");
+                    ServiceInvoiceLine.SetFilter("Document No.", FORMAT(FieldRef.Value));
+                    ServiceInvoiceLine.SetFilter(Type, '>%1', 0);
+                    ServiceInvoiceLine.SetFilter("No.", '<>%1', '');
+                    ServiceInvoiceLine.FindFirst;
+                end;
+            Database::"Service Cr.Memo Header":
+                begin
+                    ServiceCreditMemoLine.SetCurrentKey(Type, "No.");
+                    ServiceCreditMemoLine.SetFilter("Document No.", FORMAT(FieldRef.Value));
+                    ServiceCreditMemoLine.SetFilter(Type, '>%1', 0);
+                    ServiceCreditMemoLine.SetFilter("No.", '<>%1', '');
+                    ServiceCreditMemoLine.FindFirst;
+                end;
+        end;
+    end;
+
+    [TryFunction]
+    local procedure TryEInvoiceAllowed(Sender : Variant; PDFInvoice : Boolean; CurrFieldNo : Integer);
+    var
+        myInt: Integer;
+    begin
+        
     end;
 }
