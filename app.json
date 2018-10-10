@@ -1,0 +1,23 @@
+{
+  "id": "13f49e8f-1d7f-49ac-9cd4-36f1c702baba",
+  "name": "EDOC",
+  "publisher": "Armada Dynamics as",
+  "brief": "Electronic document management",
+  "description": "EDOC manages electronic documents (EHF and PDF) and print to paper in Dynamics NAV NO by introducing queues that can be processed with job queues. All electronic documents processed are saved in a ledger table. EDOC also extends EHF by embedding a PDF copy of the invoice.",
+  "version": "1.0.0.0",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "capabilities": [],
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "11.0.0.0",
+  "application": "11.0.0.0",
+  "target": "Internal",
+  "idRange": {
+    "from": 50100,
+    "to": 50149
+  }
+}
